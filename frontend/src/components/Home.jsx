@@ -13,9 +13,9 @@ export function Home(){
             
                 <div className="flex flex-col items-center space-y-4">
                     <input type="file" accept=".doc" hidden id="fileInput"/>
-                    <label htmlFor="fileInput" className="w-full flex item-center justify-center px-4 py-6 bg-gray-100 text-gray-700 rounded-lg shadow-lg cursor-pointer border-blue hover:bg-blue-700 duration-300">
-                        <FaFileWord />
-                        <span className="text-3xl mr-2 hover:text-white">Choose File</span>
+                    <label htmlFor="fileInput" className="w-full flex item-center justify-center px-4 py-6 bg-gray-100 text-gray-700 rounded-lg shadow-lg cursor-pointer border-blue hover:bg-blue-700 duration-300 hover:text-white">
+                        <FaFileWord className="text-3xl" />
+                        <span className="text-3xl mr-2 ">Choose File</span>
                     </label>
                     <button className="text-white bg-blue-600 hover:bg-blue-700 duration-300 font-bold px-4 py-2 rounded">Convert File</button>
                 </div>
