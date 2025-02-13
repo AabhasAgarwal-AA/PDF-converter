@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaFileWord } from "react-icons/fa";
+import axios from "axios";
 
 export function Home() {
     const[selectedFile, setSelectedFile] = useState(null);
@@ -32,7 +33,6 @@ export function Home() {
             setSelectedFile(null);
             setDownloadError("");
             setConvert("File Converted Successfully");
-
         }catch(error){
             console.log(error);
             if (error.response && error.response.status == 400) {
@@ -40,7 +40,6 @@ export function Home() {
             } else {
                 setConvert("");
             }
-
         }
     }
   return (
@@ -66,6 +65,14 @@ export function Home() {
           <button onClick={handleSubmit} disabled={!selectedFile} className="text-white bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 disabled:pointer-events-none duration-300 font-bold px-4 py-2 rounded">
             Convert File
           </button>
+
+            {convert && (
+                <div className="text-green-500 text-center">{convert}</div>
+            )}
+            {downloadError && (
+                <div className="text-red-500 text-center">{downloadError}</div>
+            )}
+
         </div>
       </div>
     </div>
